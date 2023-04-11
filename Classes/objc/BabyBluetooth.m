@@ -278,7 +278,7 @@
 
 #pragma mark - 链式函数
 //查找Peripherals
-- (BabyBluetooth *(^)()) scanForPeripherals {
+- (BabyBluetooth *(^)(void)) scanForPeripherals {
     return ^BabyBluetooth *() {
         [babyCentralManager->pocket setObject:@"YES" forKey:@"needScanForPeripherals"];
         return self;
@@ -286,7 +286,7 @@
 }
 
 //连接Peripherals
-- (BabyBluetooth *(^)()) connectToPeripherals {
+- (BabyBluetooth *(^)(void)) connectToPeripherals {
     return ^BabyBluetooth *() {
         [babyCentralManager->pocket setObject:@"YES" forKey:@"needConnectPeripheral"];
         return self;
@@ -294,7 +294,7 @@
 }
 
 //发现Services
-- (BabyBluetooth *(^)()) discoverServices {
+- (BabyBluetooth *(^)(void)) discoverServices {
     return ^BabyBluetooth *() {
         [babyCentralManager->pocket setObject:@"YES" forKey:@"needDiscoverServices"];
         return self;
@@ -302,7 +302,7 @@
 }
 
 //获取Characteristics
-- (BabyBluetooth *(^)()) discoverCharacteristics {
+- (BabyBluetooth *(^)(void)) discoverCharacteristics {
     return ^BabyBluetooth *() {
         [babyCentralManager->pocket setObject:@"YES" forKey:@"needDiscoverCharacteristics"];
         return self;
@@ -310,7 +310,7 @@
 }
 
 //更新Characteristics的值
-- (BabyBluetooth *(^)()) readValueForCharacteristic {
+- (BabyBluetooth *(^)(void)) readValueForCharacteristic {
     return ^BabyBluetooth *() {
         [babyCentralManager->pocket setObject:@"YES" forKey:@"needReadValueForCharacteristic"];
         return self;
@@ -318,7 +318,7 @@
 }
 
 //设置查找到Descriptors名称的block
-- (BabyBluetooth *(^)()) discoverDescriptorsForCharacteristic {
+- (BabyBluetooth *(^)(void)) discoverDescriptorsForCharacteristic {
     return ^BabyBluetooth *() {
         [babyCentralManager->pocket setObject:@"YES" forKey:@"needDiscoverDescriptorsForCharacteristic"];
         return self;
@@ -326,7 +326,7 @@
 }
 
 //设置读取到Descriptors值的block
-- (BabyBluetooth *(^)()) readValueForDescriptors {
+- (BabyBluetooth *(^)(void)) readValueForDescriptors {
     return ^BabyBluetooth *() {
         [babyCentralManager->pocket setObject:@"YES" forKey:@"needReadValueForDescriptors"];
         return self;
@@ -334,7 +334,7 @@
 }
 
 //开始并执行
-- (BabyBluetooth *(^)()) begin {
+- (BabyBluetooth *(^)(void)) begin {
     return ^BabyBluetooth *() {
         //取消未执行的stop定时任务
         [timerForStop invalidate];
